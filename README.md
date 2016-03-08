@@ -58,7 +58,7 @@ Want more options or more granular options? Use `abstract-npm-registry` with `mo
 Each named export on any `require`able "suite" exposed by `abstract-npm-registry` is simply **a function that returns an `it` function.** The returned function can be passed to `it` in any `mocha` suite. e.g.
 
 **my.custom.test.js**
-```
+``` js
 var abstractNpmRegistry = require('../')({
   registry: 'https://registry.npmjs.org',
   headers: { 'X-ANY-HEADER-YOU-WANT': true }
@@ -81,3 +81,6 @@ describe('My super custom test suite', function () {
 [npm/npm-registry-client]: https://github.com/npm/npm-registry-client/search?utf8=%E2%9C%93&q=url.resolve%28
 [npm/newwww]: https://github.com/npm/newww/tree/master/agents
 [npm/public-api]: https://github.com/npm/public-api
+[local-npm]: https://github.com/nolanlawson/local-npm#readme
+[sinopia]: https://github.com/rlidwka/sinopia#readme
+[registry-migrate]: https://github.com/jcrugzz/registry-migrate#readme
