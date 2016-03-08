@@ -2,4 +2,9 @@
 
 var abstractRegistry = require('./');
 
-abstractRegistry({});
+abstractRegistry({
+  suites: [
+    'publish',
+    'pkg/dist-tag'
+  ]
+});

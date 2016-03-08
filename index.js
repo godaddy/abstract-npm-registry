@@ -1,6 +1,7 @@
 'use strict';
 
 var path = require('path');
+var debug = require('diagnostics')('abstract-npm-registry:mocha');
 var Mocha = require('mocha');
 
 module.exports = function (opts, callback) {
@@ -17,7 +18,21 @@ module.exports = function (opts, callback) {
   mocha.files = [];
 
   (opts.suites || [
-    'publish'
+    'pkg/view',
+    'pkg/fetch',
+    'pkg/version',
+    'publish',
+    'unpublish',
+    'pkg/dist-tag',
+    'user/add',
+    'user/logout',
+    'pkg/update',
+    'ping',
+    'whoami',
+    'team',
+    'access',
+    'views/all',
+    'views/query'
   ]).forEach(function (file) {
     //
     // We slightly modify the core mocha file loading logic
@@ -27,18 +42,31 @@ module.exports = function (opts, callback) {
     file = path.resolve(file);
     var suite = mocha.suite;
     var target = require(file);
+    var baseFile = file.replace(rootd, '');
 
+    debug('pre-require', baseFile);
     suite.emit('pre-require', global, file, mocha);
 
-    global.describe(file.replace(rootd, ''), function () {
+    global.describe(baseFile, function () {
       Object.keys(target).forEach(function (exp) {
         if (typeof target[exp] !== 'function') { return; }
 
-        global.it(exp, target[exp](opts));
+        var skip = target[exp]['it.skip'];
+        var itFn = skip && global.xit || global.it;
+        var testName =  target[exp]['it.name']
+          ? `(${exp}) ${target[exp]['it.name']}`
+          : exp;
+
+        debug('schedule.it \n  %s \n %j', testName, {
+          skip: skip,
+          require: `${baseFile}.js`
+        });
+        itFn(testName, target[exp](opts));
       });
     });
   });
 
+  debug('run suite');
   mocha.run(callback || function (code) {
     process.on('exit', function() { process.exit(code) });
   });
