@@ -18,16 +18,56 @@ This project is an attempt to document the public `npm` wire protocol for these 
 
 ## Usage
 
-This library uses `mocha` for tests.
+`abstract-npm-registry` uses `mocha` and `assume` for test execution and assertion. Most common configurations can be accomplished by using the micro-runner provided by `abstract-npm-registry`.
 
 ``` js
-var abstractRegistry = require('abstract-npm-registry');
-var registry = abstractRegistry('https://registry.npmjs.org');
+var abstractNpmRegistry = require('abstract-npm-registry');
 
 //
-// Runs an entire suite
+// Runs the entire suite of tests
 //
-registry.run();
+abstractNpmRegistry({
+  registry: 'https://registry.npmjs.org',
+  headers: {
+    'X-ANY-HEADER-YOU-WANT': true
+  },
+  suites: [
+    'pkg/view',
+    'pkg/fetch',
+    'pkg/version',
+    'publish',
+    'unpublish',
+    'pkg/dist-tag',
+    'user/add',
+    'user/logout',
+    'pkg/update',
+    'ping',
+    'whoami',
+    'team',
+    'access',
+    'views/all',
+    'views/query'
+  ]
+});
+```
+
+Want more options or more granular options? Use `abstract-npm-registry` with `mocha` directly (see below) or [open an issue!](https://github.com/warehouseai/abstract-npm-registry).
+
+### Using with `mocha` directly
+
+Each named export on any `require`able "suite" exposed by `abstract-npm-registry` is simply **a function that returns an `it` function.** The returned function can be passed to `it` in any `mocha` suite. e.g.
+
+**my-tests.js**
+```
+var publish = require('abstract-npm-registry/publish');
+var valid = publish.valid({
+  registry: 'https://registry.npmjs.org',
+  headers: { 'X-ANY-HEADER-YOU-WANT': true }
+});
+
+describe('My super custom test suite', function () {
+  it(valid['it.name'], valid);
+});
 ```
 
 [npm/npm-registry-couchapp]: https://github.com/npm/npm-registry-couchapp/blob/master/registry/rewrites.js
