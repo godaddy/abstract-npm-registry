@@ -57,16 +57,23 @@ Want more options or more granular options? Use `abstract-npm-registry` with `mo
 
 Each named export on any `require`able "suite" exposed by `abstract-npm-registry` is simply **a function that returns an `it` function.** The returned function can be passed to `it` in any `mocha` suite. e.g.
 
-**my-tests.js**
+**my.custom.test.js**
 ```
-var publish = require('abstract-npm-registry/publish');
-var valid = publish.valid({
+var abstractNpmRegistry = require('../')({
   registry: 'https://registry.npmjs.org',
   headers: { 'X-ANY-HEADER-YOU-WANT': true }
 });
 
+console.log('\n\n> Starting my custom test suite using mocha...');
+
 describe('My super custom test suite', function () {
-  it(valid['it.name'], valid);
+  abstractNpmRegistry.it('pkg/dist-tag.add');
+  abstractNpmRegistry.it('pkg/dist-tag.list');
+  abstractNpmRegistry.it('pkg/dist-tag.remove');
+
+  abstractNpmRegistry.it('pkg/fetch.found');
+  abstractNpmRegistry.it('pkg/fetch.noVersion');
+  abstractNpmRegistry.it('pkg/fetch.noPackage');
 });
 ```
 
