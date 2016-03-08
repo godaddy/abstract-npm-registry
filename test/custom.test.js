@@ -31,4 +31,13 @@ describe('My super custom test suite', function () {
   abstractNpmRegistry.it('user/logout.found');
   abstractNpmRegistry.it('user/logout.notFound');
 
+  //
+  // TODO: Write stubs for usage of
+  // access.js
+  // ping.js
+  // publish.js
+  // team.js
+  // unpublish.js
+  // whoami.js
+  //
 });

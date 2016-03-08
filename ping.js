@@ -2,7 +2,6 @@
 
 var nit = require('./lib/nit')('GET /-/ping');
 
-
 /**
  * Test coverage for the simple ping route
  * See: `curl http://{AUTH}@registry.npmjs.org/-/ping?write=true`

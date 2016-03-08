@@ -14,10 +14,10 @@ abstractRegistry({
     'pkg/update',
     'ping',
     'whoami',
-    // 'team',
-    // 'access',
-    // 'views/all',
-    // 'views/query'
+    'team',
+    'access',
+    'views/all',
+    'views/query'
   ]
 }, function () {
 
