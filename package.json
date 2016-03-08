@@ -1,0 +1,27 @@
+{
+  "name": "abstract-npm-registry",
+  "version": "0.0.0",
+  "description": "An open and extendible test suite for you can use to test various functional areas of an npm registry.",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover _mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warehouseai/abstract-npm-registry.git"
+  },
+  "keywords": [
+    "npm",
+    "npm-registry",
+    "npm-client",
+    "abstract",
+    "mocha",
+    "tests"
+  ],
+  "author": "Charlie Robbins <charlie.robbins@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/warehouseai/abstract-npm-registry/issues"
+  },
+  "homepage": "https://github.com/warehouseai/abstract-npm-registry#readme"
+}
