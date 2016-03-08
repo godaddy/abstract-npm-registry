@@ -8,5 +8,7 @@
  * https://github.com/npm/npm-registry-couchapp/blob/master/registry/rewrites.js#L61-L64
  */
 module.exports = function (opts) {
-  throw new Error('Not implemented');
+  return function () {
+    throw new Error('Not implemented.');
+  };
 };

@@ -5,5 +5,7 @@
  * See: `curl http://{AUTH}@registry.npmjs.org/-/ping?write=true`
  */
 module.exports = function (opts) {
-  throw new Error('Not implemented.');
+  return function () {
+    throw new Error('Not implemented.');
+  };
 };

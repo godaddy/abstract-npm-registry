@@ -5,5 +5,7 @@
  * See: "npm help dist-tag"
  */
 module.exports = function (opts) {
-  throw new Error('Not implemented');
+  return function () {
+    throw new Error('Not implemented.');
+  };
 };

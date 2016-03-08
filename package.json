@@ -4,7 +4,7 @@
   "description": "An open and extendible test suite for you can use to test various functional areas of an npm registry.",
   "main": "index.js",
   "scripts": {
-    "test": "istanbul cover _mocha -R spec"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/warehouseai/abstract-npm-registry/issues"
   },
-  "homepage": "https://github.com/warehouseai/abstract-npm-registry#readme"
+  "homepage": "https://github.com/warehouseai/abstract-npm-registry#readme",
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  }
 }
