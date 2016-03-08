@@ -16,3 +16,21 @@ This project is an attempt to document the public `npm` wire protocol for these 
 2. [npm/npm-registry-client]: all references to `url.resolve` represent one or more routes that `Client` instances consume when used by the `npm` CLI.
 3. [npm/newwww] and [npm/public-api]: a loosely coupled set of internal APIs that have added to the original API exposed in [npm/npm-registry-couchapp].
 
+## Usage
+
+This library uses `mocha` for tests.
+
+``` js
+var abstractRegistry = require('abstract-npm-registry');
+var registry = abstractRegistry('https://registry.npmjs.org');
+
+//
+// Runs an entire suite
+//
+registry.run();
+```
+
+[npm/npm-registry-couchapp]: https://github.com/npm/npm-registry-couchapp/blob/master/registry/rewrites.js
+[npm/npm-registry-client]: https://github.com/npm/npm-registry-client/search?utf8=%E2%9C%93&q=url.resolve%28
+[npm/newwww]: https://github.com/npm/newww/tree/master/agents
+[npm/public-api]: https://github.com/npm/public-api
