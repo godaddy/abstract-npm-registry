@@ -11,3 +11,15 @@ module.exports.add = nit.skip('PUT :api/:tag', function (opts) {
     throw new Error('Not implemented.');
   };
 });
+
+module.exports.list = nit.skip('GET :api', function (opts) {
+  return function () {
+    throw new Error('Not implemented.');
+  };
+});
+
+module.exports.remove = nit.skip('DELETE :api/:tag', function (opts) {
+  return function () {
+    throw new Error('Not implemented.');
+  };
+});

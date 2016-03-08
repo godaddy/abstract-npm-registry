@@ -4,7 +4,7 @@
   "description": "An open and extendible test suite for you can use to test various functional areas of an npm registry.",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "DEBUG=abstract* node test/run.test.js && mocha test/custom.test.js"
   },
   "repository": {
     "type": "git",
