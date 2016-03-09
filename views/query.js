@@ -45,7 +45,7 @@ module.exports.starredByUser = nit.skip(':api/starred-by-user/:user', function (
   };
 });
 
-module.exports.starredByUser = nit.skip(':api/starred-by-package/:pkg', function (opts) {
+module.exports.starredByPackage = nit.skip(':api/starred-by-package/:pkg', function (opts) {
   return function () {
     throw new Error('Not implemented.');
   };

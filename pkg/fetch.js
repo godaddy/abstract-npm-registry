@@ -14,13 +14,13 @@ module.exports.found = nit.skip(':api for a valid version', function (opts) {
   };
 });
 
-module.exports.noVersion = nit.skip(':api for an invalid version', function (opts) {
+module.exports.noVersion = nit.skip(':api for an invalid or missing version', function (opts) {
   return function () {
     throw new Error('Not implemented.');
   };
 });
 
-module.exports.noPackage = nit.skip(':api for an invalid version', function (opts) {
+module.exports.noPackage = nit.skip(':api for missing package', function (opts) {
   return function () {
     throw new Error('Not implemented.');
   };

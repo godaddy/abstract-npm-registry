@@ -10,7 +10,7 @@ Understanding the wire protocol expected by the npm CLI is incredibly important.
 - Evaluation of local developer solutions (e.g. _"Should I use [sinopia] or [local-npm]?"_).
 - More sophisticated developer tooling built on top of `npm` (e.g. a remote `npm` **post-publish** hook similar to a `git` post-commit hook).
 
-This project is an attempt to document the public `npm` wire protocol for these reasons and more by creating an open and extendible test suite for anyone to use and contribut to. It pulls data from multiple sources:
+This project is an attempt to document the public `npm` wire protocol for these reasons and more by creating an open and extendible test suite for anyone to use and contribute to. It pulls data from multiple sources:
 
 1. [npm/npm-registry-couchapp]: technically "deprecated", but largely the most accurate representation of the the public npm API.
 2. [npm/npm-registry-client]: all references to `url.resolve` represent one or more routes that `Client` instances consume when used by the `npm` CLI.
@@ -31,6 +31,20 @@ abstractNpmRegistry({
   headers: {
     'X-ANY-HEADER-YOU-WANT': true
   },
+  //
+  // By default all of these suites are
+  // included.
+  //
+  suites: [
+    'publish',
+    'unpublish'
+  ]
+});
+```
+
+_**n.b. By default all test suites are included**_
+
+``` js
   suites: [
     'pkg/view',
     'pkg/fetch',
@@ -48,7 +62,6 @@ abstractNpmRegistry({
     'views/all',
     'views/query'
   ]
-});
 ```
 
 Want more options or more granular options? Use `abstract-npm-registry` with `mocha` directly (see below) or [open an issue!](https://github.com/warehouseai/abstract-npm-registry).
