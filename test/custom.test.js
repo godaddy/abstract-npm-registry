@@ -10,6 +10,9 @@ console.log('\n\n> Starting my custom test suite using mocha...');
 describe('My custom test suite of defaults', function () {
   this.timeout(5000);
 
+  abstractNpmRegistry.it('ping.standard');
+  abstractNpmRegistry.it('ping.write');
+
   abstractNpmRegistry.it('pkg/dist-tag.add');
   abstractNpmRegistry.it('pkg/dist-tag.list');
   abstractNpmRegistry.it('pkg/dist-tag.remove');
