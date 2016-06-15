@@ -18,7 +18,7 @@ This project is an attempt to document the public `npm` wire protocol for these 
 
 ### Status & Completeness
 
-The goal of this project is to have 100% coverage over all routes and important usage scenarios (e.g. attempting to publish a package that is not yours). We cannot do this without **YOUR HELP**
+The goal of this project is to have 100% coverage over all routes and important usage scenarios (e.g. attempting to publish a package that is not yours). We cannot do this without **YOUR HELP!**
 
 - [x] pkg/show
 - [x] ping
