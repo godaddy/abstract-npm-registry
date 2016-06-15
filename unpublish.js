@@ -1,6 +1,6 @@
 'use strict';
 
-var nit = require('./lib/nit')('DELETE /:pkg/-rev/:rev');
+const nit = require('./lib/nit')('DELETE /:pkg/-rev/:rev');
 
 /**
  * Test coverage for unpublishing npm packages

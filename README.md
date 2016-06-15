@@ -21,7 +21,7 @@ This project is an attempt to document the public `npm` wire protocol for these 
 `abstract-npm-registry` uses `mocha` and `assume` for test execution and assertion. Most common configurations can be accomplished by using the micro-runner provided by `abstract-npm-registry`.
 
 ``` js
-var abstractNpmRegistry = require('abstract-npm-registry');
+const abstractNpmRegistry = require('abstract-npm-registry');
 
 //
 // Runs the entire suite of tests
@@ -72,7 +72,7 @@ Each named export on any `require`able "suite" exposed by `abstract-npm-registry
 
 **my.custom.test.js**
 ``` js
-var abstractNpmRegistry = require('../')({
+const abstractNpmRegistry = require('../')({
   registry: 'https://registry.npmjs.org',
   headers: { 'X-ANY-HEADER-YOU-WANT': true }
 });

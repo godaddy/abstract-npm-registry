@@ -1,6 +1,6 @@
 'use strict';
 
-var nit = require('./lib/nit')('POST /:pkg');
+const nit = require('./lib/nit')('POST /:pkg');
 
 /**
  * Test coverage for publishing npm packages

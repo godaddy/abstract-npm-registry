@@ -1,6 +1,6 @@
 'use strict';
 
-var nit = require('./lib/nit')('GET /-/ping');
+const nit = require('./lib/nit')('GET /-/ping');
 
 /**
  * Test coverage for the simple ping route

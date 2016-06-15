@@ -1,6 +1,6 @@
 'use strict';
 
-var nit = require('../lib/nit')('GET /-/all');
+const nit = require('../lib/nit')('GET /-/all');
 
 /**
  * Test coverage for listing all packages

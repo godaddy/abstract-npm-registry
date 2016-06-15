@@ -1,6 +1,6 @@
 'use strict';
 
-var nit = require('../lib/nit')('GET /:pkg/-/:att');
+const nit = require('../lib/nit')('GET /:pkg/-/:att');
 
 /**
  * Test coverage for downloading packages

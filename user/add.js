@@ -1,6 +1,6 @@
 'use strict';
 
-var nit = require('../lib/nit')('PUT /-/user/org.couchdb.user:[:user]');
+const nit = require('../lib/nit')('PUT /-/user/org.couchdb.user:[:user]');
 
 /**
  * Test coverage for adding new npm users

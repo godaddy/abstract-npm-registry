@@ -1,9 +1,9 @@
 'use strict';
 
-var nit = require('../lib/nit')('GET /:pkg');
-var requests = require('../lib/requests');
-var request = require('supertest');
-var assume = require('assume');
+const nit = require('../lib/nit')('GET /:pkg');
+const requests = require('../lib/requests');
+const request = require('supertest');
+const assume = require('assume');
 
 /**
  * Test coverage for getting JSON for npm packages

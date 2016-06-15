@@ -1,6 +1,6 @@
 'use strict';
 
-var abstractNpmRegistry = require('../')({
+const abstractNpmRegistry = require('../')({
   registry: 'https://registry.npmjs.org',
   headers: { 'X-ANY-HEADER-YOU-WANT': true }
 });

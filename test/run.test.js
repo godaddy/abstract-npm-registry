@@ -1,6 +1,6 @@
 'use strict';
 
-var abstractRegistry = require('../');
+const abstractRegistry = require('../');
 
 abstractRegistry({
   suites: [

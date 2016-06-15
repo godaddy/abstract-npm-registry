@@ -1,6 +1,6 @@
 'use strict';
 
-var nit = require('./lib/nit')('/-/package/:scope/:pkg/access');
+const nit = require('./lib/nit')('/-/package/:scope/:pkg/access');
 
 /**
  * Test coverage for access control to public packages

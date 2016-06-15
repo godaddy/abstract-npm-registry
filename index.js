@@ -1,7 +1,7 @@
 'use strict';
 
-var path = require('path');
-var debug = require('diagnostics')('abstract-npm-registry');
+const path = require('path');
+const debug = require('diagnostics')('abstract-npm-registry');
 
 /**
  * Creates a new instance of AbstractNpmRegistry and

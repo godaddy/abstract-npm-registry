@@ -1,6 +1,6 @@
 'use strict';
 
-var nit = require('./lib/nit')('/-/org/:scope');
+const nit = require('./lib/nit')('/-/org/:scope');
 
 /**
  * Test coverage for access control to public and private teams

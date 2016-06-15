@@ -1,6 +1,6 @@
 'use strict';
 
-var nit = require('../lib/nit')('/-/package/:pkg/dist-tags');
+const nit = require('../lib/nit')('/-/package/:pkg/dist-tags');
 
 /**
  * Test coverage for working with dist-tags on packages

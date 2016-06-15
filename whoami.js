@@ -1,6 +1,6 @@
 'use strict';
 
-var nit = require('./lib/nit')('GET /-/whoami');
+const nit = require('./lib/nit')('GET /-/whoami');
 
 /**
  * Test coverage for the whoami route

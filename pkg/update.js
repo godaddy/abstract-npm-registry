@@ -1,6 +1,6 @@
 'use strict';
 
-var nit = require('../lib/nit')('PUT /:pkg');
+const nit = require('../lib/nit')('PUT /:pkg');
 
 /**
  * Test coverage for updating JSON of npm packages

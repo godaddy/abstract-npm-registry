@@ -1,6 +1,6 @@
 'use strict';
 
-var nit = require('../lib/nit')('DELETE /-/user/token/:token');
+const nit = require('../lib/nit')('DELETE /-/user/token/:token');
 
 /**
  * Test coverage for logging out
