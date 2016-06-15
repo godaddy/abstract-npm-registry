@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/warehouseai/abstract-npm-registry#readme",
   "devDependencies": {
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "supertest": "^1.2.0"
   },
   "dependencies": {
     "diagnostics": "^1.0.1"

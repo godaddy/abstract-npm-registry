@@ -9,6 +9,7 @@ var debug = require('diagnostics')('abstract-npm-registry');
  */
 module.exports = function (opts, callback) {
   opts = opts || {};
+  opts.registry = opts.registry || 'https://registry.npmjs.org';
 
   var suite = new AbstractNpmRegistry(opts);
   if (callback || opts.run) {
