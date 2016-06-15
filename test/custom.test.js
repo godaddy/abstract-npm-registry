@@ -13,6 +13,14 @@ describe('My custom test suite of defaults', function () {
   abstractNpmRegistry.it('ping.standard');
   abstractNpmRegistry.it('ping.write');
 
+  abstractNpmRegistry.it('whoami.auth', {
+    username: process.env.NPM_USERNAME,
+    password: process.env.NPM_PASSWORD
+  });
+
+  abstractNpmRegistry.it('whoami.bearerToken');
+  abstractNpmRegistry.it('whoami.noAuth');
+
   abstractNpmRegistry.it('pkg/dist-tag.add');
   abstractNpmRegistry.it('pkg/dist-tag.list');
   abstractNpmRegistry.it('pkg/dist-tag.remove');
@@ -39,10 +47,8 @@ describe('My custom test suite of defaults', function () {
   //
   // TODO: Write stubs for usage of
   // access.js
-  // ping.js
   // publish.js
   // team.js
   // unpublish.js
-  // whoami.js
   //
 });
