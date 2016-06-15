@@ -16,6 +16,25 @@ This project is an attempt to document the public `npm` wire protocol for these 
 2. [npm/npm-registry-client]: all references to `url.resolve` represent one or more routes that `Client` instances consume when used by the `npm` CLI.
 3. [npm/newwww] and [npm/public-api]: a loosely coupled set of internal APIs that have added to the original API exposed in [npm/npm-registry-couchapp].
 
+### Status & Completeness
+
+The goal of this project is to have 100% coverage over all routes and important usage scenarios (e.g. attempting to publish a package that is not yours). We cannot do this without **YOUR HELP**
+
+- [x] pkg/show
+- [x] ping
+- [ ] whoami _(partial)_
+- [ ] pkg/dist-tag _(partial)_
+- [ ] pkg/fetch
+- [ ] publish
+- [ ] unpublish
+- [ ] user/add
+- [ ] user/logout
+- [ ] pkg/update
+- [ ] team
+- [ ] access
+- [ ] views/all
+- [ ] views/query
+
 ## Usage
 
 `abstract-npm-registry` uses `mocha` and `assume` for test execution and assertion. Most common configurations can be accomplished by using the micro-runner provided by `abstract-npm-registry`.
@@ -48,7 +67,6 @@ _**n.b. By default all test suites are included**_
   suites: [
     'pkg/show',
     'pkg/fetch',
-    'pkg/version',
     'publish',
     'unpublish',
     'pkg/dist-tag',
@@ -89,6 +107,9 @@ describe('My super custom test suite', function () {
   abstractNpmRegistry.it('pkg/fetch.noPackage');
 });
 ```
+
+##### LICENSE: MIT
+##### AUTHOR: [Charlie Robbins](https://github.com/indexzero)
 
 [npm/npm-registry-couchapp]: https://github.com/npm/npm-registry-couchapp/blob/master/registry/rewrites.js
 [npm/npm-registry-client]: https://github.com/npm/npm-registry-client/search?utf8=%E2%9C%93&q=url.resolve%28
