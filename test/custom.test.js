@@ -20,10 +20,10 @@ describe('My super custom test suite', function () {
   abstractNpmRegistry.it('pkg/update.conflict409');
   abstractNpmRegistry.it('pkg/update.star');
 
-  abstractNpmRegistry.it('pkg/view.found');
-  abstractNpmRegistry.it('pkg/view.version');
-  abstractNpmRegistry.it('pkg/view.noPackage');
-  abstractNpmRegistry.it('pkg/view.noVersion');
+  abstractNpmRegistry.it('pkg/show.found');
+  abstractNpmRegistry.it('pkg/show.version');
+  abstractNpmRegistry.it('pkg/show.noPackage');
+  abstractNpmRegistry.it('pkg/show.noVersion');
 
   abstractNpmRegistry.it('user/add.isNew');
   abstractNpmRegistry.it('user/add.existing');

@@ -4,7 +4,7 @@ var abstractRegistry = require('../');
 
 abstractRegistry({
   suites: [
-    'pkg/view',
+    'pkg/show',
     'pkg/fetch',
     'publish',
     'unpublish',

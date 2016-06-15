@@ -46,7 +46,7 @@ _**n.b. By default all test suites are included**_
 
 ``` js
   suites: [
-    'pkg/view',
+    'pkg/show',
     'pkg/fetch',
     'pkg/version',
     'publish',
