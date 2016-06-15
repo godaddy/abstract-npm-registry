@@ -11,7 +11,10 @@ describe('My extended custom test suite', function () {
   this.timeout(5000);
 
   // abstractNpmRegistry.it('pkg/dist-tag.add');
-  // abstractNpmRegistry.it('pkg/dist-tag.list');
+  abstractNpmRegistry.it('pkg/dist-tag.list', {
+    pkg: 'winston',
+    body: { latest: '2.2.0' }
+  });
   // abstractNpmRegistry.it('pkg/dist-tag.remove');
 
   // abstractNpmRegistry.it('pkg/fetch.found');

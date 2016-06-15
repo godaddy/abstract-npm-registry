@@ -29,8 +29,8 @@ describe('My custom test suite of defaults', function () {
   abstractNpmRegistry.it('pkg/show.noPackage');
   abstractNpmRegistry.it('pkg/show.noVersion');
 
-  abstractNpmRegistry.it('pkg/dist-tag.add');
   abstractNpmRegistry.it('pkg/dist-tag.list');
+  abstractNpmRegistry.it('pkg/dist-tag.add');
   abstractNpmRegistry.it('pkg/dist-tag.remove');
 
   abstractNpmRegistry.it('pkg/fetch.found');
