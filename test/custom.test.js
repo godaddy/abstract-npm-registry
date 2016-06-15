@@ -7,7 +7,7 @@ var abstractNpmRegistry = require('../')({
 
 console.log('\n\n> Starting my custom test suite using mocha...');
 
-describe('My super custom test suite', function () {
+describe('My custom test suite of defaults', function () {
   this.timeout(5000);
 
   abstractNpmRegistry.it('pkg/dist-tag.add');

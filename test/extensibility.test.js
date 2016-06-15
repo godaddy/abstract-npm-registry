@@ -7,7 +7,7 @@ var abstractNpmRegistry = require('../')({
 
 console.log('\n\n> Starting my custom test suite with overrides using mocha...');
 
-describe('My super custom test suite', function () {
+describe('My extended custom test suite', function () {
   this.timeout(5000);
 
   // abstractNpmRegistry.it('pkg/dist-tag.add');
@@ -34,8 +34,15 @@ describe('My super custom test suite', function () {
     pkg: 'winston',
     version: '2.0.0'
   });
-  abstractNpmRegistry.it('pkg/show.noPackage');
-  abstractNpmRegistry.it('pkg/show.noVersion');
+
+  abstractNpmRegistry.it('pkg/show.noPackage', {
+    pkg: 'this-no-exist-for-reals-' + Date.now()
+  });
+
+  abstractNpmRegistry.it('pkg/show.noVersion', {
+    pkg: 'this-no-exist-for-reals-' + Date.now(),
+    version: '0.0.1'
+  });
 
   // abstractNpmRegistry.it('user/add.isNew');
   // abstractNpmRegistry.it('user/add.existing');
