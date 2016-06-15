@@ -66,13 +66,11 @@ module.exports.noPackage = nit(':api for an unknown package', function (opts) {
       method: 'GET',
       path: `/${pkg}`,
       status: 404,
-      expect: function (res) {
-        //
-        // Remark: Since this is a CouchDB / implementation specific error, we may
-        // want to consider only enabling this assertion in a "strict mode".
-        //
-        assume(res.body).deep.equals({});
-      }
+      //
+      // Remark: Since this is a CouchDB / implementation specific error, we may
+      // want to consider only enabling this assertion in a "strict mode".
+      //
+      body: {}
     }, done);
   };
 });
@@ -87,15 +85,13 @@ module.exports.noVersion = nit(':api/:version for an unknown version', function 
       method: 'GET',
       path: `/${pkg}/${version}`,
       status: 404,
-      expect: function (res) {
-        //
-        // Remark: Since this is a CouchDB specific error, we may
-        // want to consider only enabling this assertion in a "strict mode".
-        //
-        assume(res.body).deep.equals({
-          error: 'not_found',
-          reason: 'document not found'
-        });
+      //
+      // Remark: Since this is a CouchDB specific error, we may
+      // want to consider only enabling this assertion in a "strict mode".
+      //
+      body: {
+        error: 'not_found',
+        reason: 'document not found'
       }
     }, done);
   };

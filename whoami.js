@@ -1,5 +1,6 @@
 'use strict';
 
+const assume = require('assume');
 const nit = require('./lib/nit')('GET /-/whoami');
 const requests = require('./lib/requests');
 
@@ -7,7 +8,7 @@ const requests = require('./lib/requests');
  * Test coverage for the whoami route
  * See: curl https://{AUTH}@registry.npmjs.org/-/whoami
  */
-module.exports.auth = nit.skip(':api with basic auth', function (opts) {
+module.exports.auth = nit(':api with basic auth', function (opts) {
   return function (done) {
     requests.authed({
       host: opts.registry,

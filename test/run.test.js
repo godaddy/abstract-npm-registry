@@ -13,7 +13,11 @@ abstractRegistry({
     'user/logout',
     'pkg/update',
     'ping',
-    'whoami',
+    //
+    // TODO: The test is functional but we need to use private
+    // credentials in Travis to unskip this.
+    //
+    // 'whoami',
     'team',
     'access',
     'views/all',
