@@ -7,13 +7,13 @@ const nit = require('../lib/nit')('PUT /:pkg');
  * See: npm-registry-couchapp
  * https://github.com/npm/npm-registry-couchapp/blob/master/registry/rewrites.js#L89-L90
  */
-module.exports.correctRev = nit.skip(':api', function (opts) {
+module.exports.correctRev = nit.skip(':api', function () {
   return function () {
     throw new Error('Not implemented.');
   };
 });
 
-module.exports.conflict409 = nit.skip(':api (409 Update Conflict)', function (opts) {
+module.exports.conflict409 = nit.skip(':api (409 Update Conflict)', function () {
   return function () {
     throw new Error('Not implemented.');
   };
@@ -24,7 +24,7 @@ module.exports.conflict409 = nit.skip(':api (409 Update Conflict)', function (op
  * See: "npm help star"
  *      "npm help stars"
  */
-module.exports.star = nit.skip(':api?write=true (add star)', function (opts) {
+module.exports.star = nit.skip(':api?write=true (add star)', function () {
   return function () {
     throw new Error('Not implemented.');
   };

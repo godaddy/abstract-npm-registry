@@ -2,7 +2,6 @@
 
 const nit = require('../lib/nit')('GET /:pkg');
 const requests = require('../lib/requests');
-const request = require('supertest');
 const assume = require('assume');
 
 /**

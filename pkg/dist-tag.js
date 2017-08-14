@@ -7,7 +7,7 @@ const requests = require('../lib/requests');
  * Test coverage for working with dist-tags on packages
  * See: "npm help dist-tag"
  */
-module.exports.add = nit.skip('PUT :api/:tag', function (opts) {
+module.exports.add = nit.skip('PUT :api/:tag', function () {
   return function () {
     throw new Error('Not implemented.');
   };
@@ -26,7 +26,7 @@ module.exports.list = nit('GET :api', function (opts) {
   };
 });
 
-module.exports.remove = nit.skip('DELETE :api/:tag', function (opts) {
+module.exports.remove = nit.skip('DELETE :api/:tag', function () {
   return function () {
     throw new Error('Not implemented.');
   };

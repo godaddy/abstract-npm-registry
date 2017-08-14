@@ -6,7 +6,7 @@ const debug = require('diagnostics')('abstract-npm-registry');
 /**
  * Creates a new instance of AbstractNpmRegistry and
  * "immediately" runs it.
- * @param  {Object} opts [description]
+ * @param  {Object} opts Configuration options
  * @param {String} opts.registry Location of registry
  * @param {[type]} opts.run [description]
  * @param  {Function} callback Function to execute when all other logic completes
@@ -48,7 +48,7 @@ function AbstractNpmRegistry(opts) {
  * Returns the resulting function of evaluating and invoking the
  * `${module}.${export}` expression with the options associated with
  * this instance.
- * @param  {[type]} expr   [description]
+ * @param  {[type]} expr Test expression
  * @param  {Object} extend Additional options
  * @returns {Object} the instance
  */
