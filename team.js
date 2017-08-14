@@ -6,7 +6,7 @@ const nit = require('./lib/nit')('/-/org/:scope');
  * Test coverage for access control to public and private teams
  * See: "npm help team"
  */
-module.exports.list = nit.skip('GET :api?format=cli', function (opts) {
+module.exports.list = nit.skip('GET :api?format=cli', function () {
   return function () {
     throw new Error('Not implemented.');
   };

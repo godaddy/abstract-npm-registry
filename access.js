@@ -6,7 +6,7 @@ const nit = require('./lib/nit')('/-/package/:scope/:pkg/access');
  * Test coverage for access control to public packages
  * See: "npm help access"
  */
-module.exports.public = nit.skip('GET :api', function (opts) {
+module.exports.public = nit.skip('GET :api', function () {
   return function () {
     throw new Error('Not implemented.');
   };

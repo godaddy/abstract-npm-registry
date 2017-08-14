@@ -33,7 +33,7 @@ module.exports.AbstractNpmRegistry = AbstractNpmRegistry;
 function AbstractNpmRegistry(opts) {
   this.opts = opts || {};
   this.rootd = path.resolve(__dirname) + '/';
-  this.parse = /^([^\.]+)\.(.*)$/;
+  this.parse = /^([^]+)\.(.*)$/;
 }
 
 /**
@@ -45,7 +45,7 @@ AbstractNpmRegistry.prototype.it = function (expr, extend) {
   var opts = this.opts;
   var match;
 
-  if ((match = this.parse.exec(expr))) {
+  if ((match === this.parse.exec(expr))) {
     const basefile = match[1];
     const method = match[2];
     const fullpath = path.resolve(this.rootd, basefile);
