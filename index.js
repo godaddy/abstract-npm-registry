@@ -10,7 +10,7 @@ const debug = require('diagnostics')('abstract-npm-registry');
  * @param {String} opts.registry Location of registry
  * @param {[type]} opts.run [description]
  * @param  {Function} callback Function to execute when all other logic completes
- * @return {Object} object that holds the state of a
+ * @returns {Object} object that holds the state of a
  * run against a registry endpoint
  */
 module.exports = function (opts, callback) {
@@ -35,6 +35,8 @@ module.exports.AbstractNpmRegistry = AbstractNpmRegistry;
  * Constructor function for the AbstractNpmRegistry object
  * which is responsible for holding all of the state of a
  * run against a registry endpoint.
+ * @param {Object} opts Options to associate with 
+ * this instance of AbstractNpmRegistry
  */
 function AbstractNpmRegistry(opts) {
   this.opts = opts || {};
@@ -46,6 +48,9 @@ function AbstractNpmRegistry(opts) {
  * Returns the resulting function of evaluating and invoking the
  * `${module}.${export}` expression with the options associated with
  * this instance.
+ * @param  {[type]} expr   [description]
+ * @param  {Object} extend Additional options
+ * @returns {Object} the instance
  */
 AbstractNpmRegistry.prototype.it = function (expr, extend) {
   var opts = this.opts;
@@ -77,6 +82,9 @@ AbstractNpmRegistry.prototype.it = function (expr, extend) {
  * Schedules all of the specified suites specified in the
  * shallow merge of `extend` and `this.opts` invoking the
  * optional callback or exiting the process.
+ * @param  {Object}   extend   Additional options
+ * @param  {Function} callback Function to execute after process completes
+ * @returns {Object} the instance
  */
 AbstractNpmRegistry.prototype.run = function (extend, callback) {
   if (!callback && typeof extend === 'function') {
