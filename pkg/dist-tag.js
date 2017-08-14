@@ -1,4 +1,4 @@
-'use strict';
+
 
 const nit = require('../lib/nit')('/-/package/:pkg/dist-tags');
 const requests = require('../lib/requests');
@@ -14,7 +14,7 @@ module.exports.add = nit.skip('PUT :api/:tag', function (opts) {
 });
 
 module.exports.list = nit('GET :api', function (opts) {
-  let pkg = opts.pkg || 'smart-private-npm';
+  const pkg = opts.pkg || 'smart-private-npm';
   return function (done) {
     requests.json({
       host: opts.registry,
