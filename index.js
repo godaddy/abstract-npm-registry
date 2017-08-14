@@ -1,4 +1,4 @@
-'use strict';
+
 
 const path = require('path');
 const debug = require('diagnostics')('abstract-npm-registry');
@@ -34,7 +34,7 @@ function AbstractNpmRegistry(opts) {
   this.opts = opts || {};
   this.rootd = path.resolve(__dirname) + '/';
   this.parse = /^([^\.]+)\.(.*)$/;
-};
+}
 
 /**
  * Returns the resulting function of evaluating and invoking the
@@ -46,9 +46,9 @@ AbstractNpmRegistry.prototype.it = function (expr, extend) {
   var match;
 
   if ((match = this.parse.exec(expr))) {
-    let basefile = match[1];
-    let method = match[2];
-    let fullpath = path.resolve(this.rootd, basefile);
+    const basefile = match[1];
+    const method = match[2];
+    const fullpath = path.resolve(this.rootd, basefile);
 
     if (extend) {
       //
@@ -59,7 +59,7 @@ AbstractNpmRegistry.prototype.it = function (expr, extend) {
     }
 
     debug('require %s', fullpath);
-    let suite = require(fullpath);
+    const suite = require(fullpath);
     debug('invoke %s.%s(opts)', basefile, method);
     suite[method].it(opts);
   }
@@ -85,7 +85,7 @@ AbstractNpmRegistry.prototype.run = function (extend, callback) {
   debug('run suite %s', JSON.stringify(this.opts, null, 2));
   require('./lib/schedule')(this.opts)
     .run(callback || function (code) {
-      process.on('exit', function() { process.exit(code) });
+      process.on('exit', function () { process.exit(code); });
     });
 
   return this;

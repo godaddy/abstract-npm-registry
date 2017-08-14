@@ -4,6 +4,8 @@
   "description": "An open and extendible test suite for you can use to test various functional areas of an npm registry.",
   "main": "index.js",
   "scripts": {
+    "eslint": "eslint-godaddy ./*.js ./../*.js test/*.js",
+    "pretest": "npm run eslint",
     "test": "DEBUG=abstract* node test/run.test.js && mocha test/{custom,extensibility}.test.js"
   },
   "repository": {
@@ -26,6 +28,10 @@
   "homepage": "https://github.com/warehouseai/abstract-npm-registry#readme",
   "devDependencies": {
     "assume": "^1.4.1",
+    "eslint": "^4.4.1",
+    "eslint-config-godaddy": "^2.0.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-mocha": "^4.11.0",
     "mocha": "^2.4.5",
     "supertest": "^1.2.0"
   },

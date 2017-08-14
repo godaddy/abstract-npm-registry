@@ -1,4 +1,4 @@
-'use strict';
+
 
 const nit = require('./lib/nit')('/-/package/:scope/:pkg/access');
 
