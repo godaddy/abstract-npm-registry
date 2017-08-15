@@ -1,4 +1,4 @@
-'use strict';
+
 
 const nit = require('../lib/nit')('GET /-');
 
@@ -9,43 +9,43 @@ const nit = require('../lib/nit')('GET /-');
  * https://github.com/npm/npm-registry-couchapp/blob/master/registry/rewrites.js#L35-L40
  * https://github.com/npm/npm-registry-couchapp/blob/master/registry/rewrites.js#L61-L64
  */
-module.exports.scripts = nit.skip(':api/scripts', function (opts) {
+module.exports.scripts = nit.skip(':api/scripts', function () {
   return function () {
     throw new Error('Not implemented.');
   };
 });
 
-module.exports.byField = nit.skip(':api/by-field', function (opts) {
+module.exports.byField = nit.skip(':api/by-field', function () {
   return function () {
     throw new Error('Not implemented.');
   };
 });
 
-module.exports.fields = nit.skip(':api/fields', function (opts) {
+module.exports.fields = nit.skip(':api/fields', function () {
   return function () {
     throw new Error('Not implemented.');
   };
 });
 
-module.exports.needBuild = nit.skip(':api/needbuild', function (opts) {
+module.exports.needBuild = nit.skip(':api/needbuild', function () {
   return function () {
     throw new Error('Not implemented.');
   };
 });
 
-module.exports.top = nit.skip(':api/top', function (opts) {
+module.exports.top = nit.skip(':api/top', function () {
   return function () {
     throw new Error('Not implemented.');
   };
 });
 
-module.exports.starredByUser = nit.skip(':api/starred-by-user/:user', function (opts) {
+module.exports.starredByUser = nit.skip(':api/starred-by-user/:user', function () {
   return function () {
     throw new Error('Not implemented.');
   };
 });
 
-module.exports.starredByPackage = nit.skip(':api/starred-by-package/:pkg', function (opts) {
+module.exports.starredByPackage = nit.skip(':api/starred-by-package/:pkg', function () {
   return function () {
     throw new Error('Not implemented.');
   };

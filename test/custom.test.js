@@ -1,4 +1,4 @@
-'use strict';
+
 
 const abstractNpmRegistry = require('../')({
   registry: 'https://registry.npmjs.org',

@@ -1,6 +1,4 @@
-'use strict';
 
-const assume = require('assume');
 const nit = require('./lib/nit')('GET /-/whoami');
 const requests = require('./lib/requests');
 
@@ -22,7 +20,7 @@ module.exports.auth = nit(':api with basic auth', function (opts) {
   };
 });
 
-module.exports.bearerToken = nit.skip(':api with bearer token', function (opts) {
+module.exports.bearerToken = nit.skip(':api with bearer token', function () {
   return function () {
     throw new Error('Not implemented.');
   };

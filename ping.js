@@ -1,4 +1,4 @@
-'use strict';
+
 
 const nit = require('./lib/nit')('GET /-/ping');
 const requests = require('./lib/requests');

@@ -1,4 +1,4 @@
-'use strict';
+
 
 const abstractNpmRegistry = require('../')({
   registry: 'https://registry.npmjs.org',
@@ -28,7 +28,7 @@ describe('My extended custom test suite', function () {
   abstractNpmRegistry.it('pkg/show.found', {
     pkg: 'winston',
     expect: ((res, assume) => {
-      let doc = res.body;
+      const doc = res.body;
       assume(doc.name).equal('winston');
     })
   });

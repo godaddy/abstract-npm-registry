@@ -1,4 +1,4 @@
-'use strict';
+
 
 const assume = require('assume');
 const nit = require('../lib/nit')('GET /-/all');

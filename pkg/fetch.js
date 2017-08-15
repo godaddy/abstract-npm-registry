@@ -1,4 +1,4 @@
-'use strict';
+
 
 const nit = require('../lib/nit')('GET /:pkg/-/:att');
 
@@ -8,19 +8,19 @@ const nit = require('../lib/nit')('GET /:pkg/-/:att');
  *      "npm help pack -g"
  * https://github.com/npm/npm-registry-couchapp/blob/master/registry/rewrites.js#L88-L92
  */
-module.exports.found = nit.skip(':api for a valid version', function (opts) {
+module.exports.found = nit.skip(':api for a valid version', function () {
   return function () {
     throw new Error('Not implemented.');
   };
 });
 
-module.exports.noVersion = nit.skip(':api for an invalid or missing version', function (opts) {
+module.exports.noVersion = nit.skip(':api for an invalid or missing version', function () {
   return function () {
     throw new Error('Not implemented.');
   };
 });
 
-module.exports.noPackage = nit.skip(':api for missing package', function (opts) {
+module.exports.noPackage = nit.skip(':api for missing package', function () {
   return function () {
     throw new Error('Not implemented.');
   };

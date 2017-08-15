@@ -1,4 +1,4 @@
-'use strict';
+
 
 const path = require('path');
 const debug = require('diagnostics')('abstract-npm-registry');
@@ -6,6 +6,12 @@ const debug = require('diagnostics')('abstract-npm-registry');
 /**
  * Creates a new instance of AbstractNpmRegistry and
  * "immediately" runs it.
+ * @param  {Object} opts Configuration options
+ * @param {String} opts.registry Location of registry
+ * @param {[type]} opts.run [description]
+ * @param  {Function} callback Function to execute when all other logic completes
+ * @returns {Object} object that holds the state of a
+ * run against a registry endpoint
  */
 module.exports = function (opts, callback) {
   opts = opts || {};
@@ -29,26 +35,31 @@ module.exports.AbstractNpmRegistry = AbstractNpmRegistry;
  * Constructor function for the AbstractNpmRegistry object
  * which is responsible for holding all of the state of a
  * run against a registry endpoint.
+ * @param {Object} opts Options to associate with 
+ * this instance of AbstractNpmRegistry
  */
 function AbstractNpmRegistry(opts) {
   this.opts = opts || {};
   this.rootd = path.resolve(__dirname) + '/';
-  this.parse = /^([^\.]+)\.(.*)$/;
-};
+  this.parse = /^([^]+)\.(.*)$/;
+}
 
 /**
  * Returns the resulting function of evaluating and invoking the
  * `${module}.${export}` expression with the options associated with
  * this instance.
+ * @param  {[type]} expr Test expression
+ * @param  {Object} extend Additional options
+ * @returns {Object} the instance
  */
 AbstractNpmRegistry.prototype.it = function (expr, extend) {
   var opts = this.opts;
   var match;
 
-  if ((match = this.parse.exec(expr))) {
-    let basefile = match[1];
-    let method = match[2];
-    let fullpath = path.resolve(this.rootd, basefile);
+  if ((match === this.parse.exec(expr))) {
+    const basefile = match[1];
+    const method = match[2];
+    const fullpath = path.resolve(this.rootd, basefile);
 
     if (extend) {
       //
@@ -59,7 +70,7 @@ AbstractNpmRegistry.prototype.it = function (expr, extend) {
     }
 
     debug('require %s', fullpath);
-    let suite = require(fullpath);
+    const suite = require(fullpath);
     debug('invoke %s.%s(opts)', basefile, method);
     suite[method].it(opts);
   }
@@ -71,6 +82,9 @@ AbstractNpmRegistry.prototype.it = function (expr, extend) {
  * Schedules all of the specified suites specified in the
  * shallow merge of `extend` and `this.opts` invoking the
  * optional callback or exiting the process.
+ * @param  {Object}   extend   Additional options
+ * @param  {Function} callback Function to execute after process completes
+ * @returns {Object} the instance
  */
 AbstractNpmRegistry.prototype.run = function (extend, callback) {
   if (!callback && typeof extend === 'function') {
@@ -85,7 +99,7 @@ AbstractNpmRegistry.prototype.run = function (extend, callback) {
   debug('run suite %s', JSON.stringify(this.opts, null, 2));
   require('./lib/schedule')(this.opts)
     .run(callback || function (code) {
-      process.on('exit', function() { process.exit(code) });
+      process.on('exit', function () { process.exit(code); });
     });
 
   return this;
